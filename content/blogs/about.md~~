@@ -3,7 +3,6 @@ title: "About me"
 date: 2022-09-17T10:38:02+05:30
 draft: false
 layout: "about"
-#type : "page"
 author : abhinash khare
 hiddenFromHomePage : true
 ---
