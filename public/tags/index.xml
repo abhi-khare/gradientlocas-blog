@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on GradientLocas</title>
+    <link>https://abhi-khare.github.io/tags/</link>
+    <description>Recent content in Tags on GradientLocas</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 19 Sep 2022 21:09:44 +0530</lastBuildDate><atom:link href="https://abhi-khare.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>nlp</title>
+      <link>https://abhi-khare.github.io/tags/nlp/</link>
+      <pubDate>Mon, 19 Sep 2022 21:09:44 +0530</pubDate>
+      
+      <guid>https://abhi-khare.github.io/tags/nlp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>representation learning</title>
+      <link>https://abhi-khare.github.io/tags/representation-learning/</link>
+      <pubDate>Mon, 19 Sep 2022 21:09:44 +0530</pubDate>
+      
+      <guid>https://abhi-khare.github.io/tags/representation-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Game AI</title>
+      <link>https://abhi-khare.github.io/tags/game-ai/</link>
+      <pubDate>Sun, 18 Sep 2022 21:09:44 +0530</pubDate>
+      
+      <guid>https://abhi-khare.github.io/tags/game-ai/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Minimax</title>
+      <link>https://abhi-khare.github.io/tags/minimax/</link>
+      <pubDate>Sun, 18 Sep 2022 21:09:44 +0530</pubDate>
+      
+      <guid>https://abhi-khare.github.io/tags/minimax/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

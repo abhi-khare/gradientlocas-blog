@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+  Solving Tic-Tac-Toe using Minimax Algorithm · GradientLocas
+</title>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; block-all-mixed-content; default-src 'self'; child-src 'self'; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net/; form-action 'self'; frame-src 'self'; img-src 'self'; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/ https://cdn.jsdelivr.net/; script-src 'self' 'unsafe-inline' https://www.google-analytics.com https://cdn.jsdelivr.net/; prefetch-src 'self'; connect-src 'self' https://www.google-analytics.com;">
+
+
+
+
+<meta name="author" content="Hey, I am Abhinash">
+<meta name="description" content="Introduction  Link to heading   Back in the day, I wrote an AI program that used the minimax algorithm to power the bot to play against humans in the classic Tic Tac Toe game. I still remember it when I asked my friends to play against my program and we were all excited to see the interesting choices that the program made and occasionally defended itself to push the game to a draw.">
+<meta name="keywords" content="blog,developer,personal">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Solving Tic-Tac-Toe using Minimax Algorithm"/>
+<meta name="twitter:description" content="Introduction  Link to heading   Back in the day, I wrote an AI program that used the minimax algorithm to power the bot to play against humans in the classic Tic Tac Toe game. I still remember it when I asked my friends to play against my program and we were all excited to see the interesting choices that the program made and occasionally defended itself to push the game to a draw."/>
+
+<meta property="og:title" content="Solving Tic-Tac-Toe using Minimax Algorithm" />
+<meta property="og:description" content="Introduction  Link to heading   Back in the day, I wrote an AI program that used the minimax algorithm to power the bot to play against humans in the classic Tic Tac Toe game. I still remember it when I asked my friends to play against my program and we were all excited to see the interesting choices that the program made and occasionally defended itself to push the game to a draw." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://abhi-khare.github.io/projects/tic_tac_toe_minimax/" /><meta property="article:section" content="projects" />
+<meta property="article:published_time" content="2022-09-18T21:09:44+05:30" />
+<meta property="article:modified_time" content="2022-09-18T21:09:44+05:30" />
+
+
+
+
+
+
+<link rel="canonical" href="https://abhi-khare.github.io/projects/tic_tac_toe_minimax/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.7f9d180e3b3bebba9ba80d55eed1255c35e00764872854736d6ad7db38884ffc.css" integrity="sha256-f50YDjs767qbqA1V7tElXDXgB2SHKFRzbWrX2ziIT/w=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.216e36d3eaf6f4cdfd67dc1200c49a8169e6478102977b3e9ac51a064c57054c.css" integrity="sha256-IW420&#43;r29M39Z9wSAMSagWnmR4ECl3s&#43;msUaBkxXBUw=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<meta name="generator" content="Hugo 0.92.2" />
+
+
+
+
+
+  </head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      GradientLocas
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Articles</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/projects/">Projects</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container page">
+  <article>
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="https://abhi-khare.github.io/projects/tic_tac_toe_minimax/">
+          Solving Tic-Tac-Toe using Minimax Algorithm
+        </a>
+      </h1>
+    </header>
+
+    <h1 id="introduction">
+  Introduction
+  <a class="heading-link" href="#introduction">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>Back in the day, I wrote an AI program that used the minimax algorithm to power the bot to play against humans in the classic Tic Tac Toe game. I still remember it when I asked my friends to play against my program and we were all excited to see the interesting choices that the program made and occasionally defended itself to push the game to a draw.  Minimax Algorithm was my first exposure to classic AI algorithms and even after spending years with the modern machine learning algorithm, I still think it&rsquo;s a simple, intuitive algorithm and closely mimics how you would think ahead in time while playing the game. Very recently, I got the chance to revisit the game from the lens of Game Theory and found myself appreciating the beauty of the algorithm even more. I hope you will enjoy this blog and appreciate this classical AI algorithm, just like I did. Please feel free to contact me if you have any feedback or suggestions.</p>
+<p>The minimax algorithm is a classic decision-making technique used in artificial intelligence and game theory. It is a powerful tool that allows a computer to make optimal decisions in a situation where there are two opposing players.</p>
+<p>At its core, the minimax algorithm is a recursive search algorithm that considers all possible moves by both players and selects the move that will maximize the player&rsquo;s score and minimize the opponent&rsquo;s score. This is done by simulating the outcome of each possible move and assigning a value to each outcome based on the relative strength of the resulting position.</p>
+<p>The minimax algorithm is typically used in games where both players are trying to maximize their own scores and minimize the other player&rsquo;s score. Examples of such games include chess, checkers, and tic-tac-toe. In these games, the minimax algorithm allows the computer to make optimal decisions by considering all possible moves and selecting the one that will result in the best outcome for the player.</p>
+<p>To implement the minimax algorithm, we first need to define a set of rules for the game that we are playing. These rules define the possible moves that can be made, the conditions under which the game ends, and the scoring system. Once we have defined these rules, we can begin to implement the minimax algorithm.</p>
+<p>First, we need to create a function that will evaluate the current game state. This function will take the current game state as input and return a score that represents the relative strength of the position. The score should be positive if the position is favorable for the player, and negative if it is favorable for the opponent.</p>
+<p>Next, we need to create a function that will generate all possible moves from the current game state. This function will take the current game state as input and return a list of all possible moves that can be made from that state.</p>
+<p>Once we have these two functions, we can implement the minimax algorithm itself. This is done using a recursive search that considers all possible moves and their resulting game states. For each possible move, the algorithm will evaluate the resulting game state using the evaluation function, and then recursively call itself on each resulting game state to generate all possible moves from that state.</p>
+<p>Once all possible moves and resulting game states have been considered, the minimax algorithm will select the move that leads to the game state with the highest score for the player and the lowest score for the opponent. This is the optimal decision, as it maximizes the player&rsquo;s score and minimizes the opponent&rsquo;s score.</p>
+<p>In conclusion, the minimax algorithm is a powerful tool that allows a computer to make optimal decisions in situations where there are two opposing players. By simulating the outcome of each possible move and assigning a value to each outcome, the minimax algorithm can determine the best move to make in any given situation. This makes it a valuable tool for artificial intelligence and game theory.</p>
+<h1 id="briefly-explain-the-problem-statement">
+  Briefly Explain the problem statement
+  <a class="heading-link" href="#briefly-explain-the-problem-statement">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>qweqweqw</p>
+<h1 id="computational-representation-of-the-game">
+  Computational representation of the game
+  <a class="heading-link" href="#computational-representation-of-the-game">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<h1 id="explain-minimax-algorithm">
+  Explain MiniMax Algorithm
+  <a class="heading-link" href="#explain-minimax-algorithm">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<h1 id="explain-how-do-we-use-minimax-to-solve-ttt">
+  Explain how do we use Minimax to solve TTT
+  <a class="heading-link" href="#explain-how-do-we-use-minimax-to-solve-ttt">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<h1 id="challenges-with-basic-minimax-version">
+  challenges with basic Minimax Version
+  <a class="heading-link" href="#challenges-with-basic-minimax-version">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<h1 id="runbook-for-code">
+  Runbook for code.
+  <a class="heading-link" href="#runbook-for-code">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<h1 id="conclude">
+  Conclude
+  <a class="heading-link" href="#conclude">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+
+  </article>
+</section>
+
+  
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2019 -
+    
+    2022
+     Hey, I am Abhinash 
+    ·
+    
+    Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.feb19891e099ae3b6acdd502ba6e51d722353e69bb0f9478ed80a05450af78d2.js" integrity="sha256-/rGYkeCZrjtqzdUCum5R1yI1Pmm7D5R47YCgVFCveNI="></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

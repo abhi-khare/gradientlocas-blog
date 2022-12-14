@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GradientLocas</title>
+    <link>https://abhi-khare.github.io/</link>
+    <description>Recent content on GradientLocas</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 19 Sep 2022 21:09:44 +0530</lastBuildDate><atom:link href="https://abhi-khare.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Representation learning in NLP : An Overview</title>
+      <link>https://abhi-khare.github.io/posts/representation_learning_1/</link>
+      <pubDate>Mon, 19 Sep 2022 21:09:44 +0530</pubDate>
+      
+      <guid>https://abhi-khare.github.io/posts/representation_learning_1/</guid>
+      <description>I am abhinash khare</description>
+    </item>
+    
+    <item>
+      <title>Resource to become 10X Engineer : Part 1</title>
+      <link>https://abhi-khare.github.io/posts/tech_resources/</link>
+      <pubDate>Mon, 19 Sep 2022 21:09:44 +0530</pubDate>
+      
+      <guid>https://abhi-khare.github.io/posts/tech_resources/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Solving Tic-Tac-Toe using Minimax Algorithm</title>
+      <link>https://abhi-khare.github.io/projects/tic_tac_toe_minimax/</link>
+      <pubDate>Sun, 18 Sep 2022 21:09:44 +0530</pubDate>
+      
+      <guid>https://abhi-khare.github.io/projects/tic_tac_toe_minimax/</guid>
+      <description>Introduction  Link to heading   Back in the day, I wrote an AI program that used the minimax algorithm to power the bot to play against humans in the classic Tic Tac Toe game. I still remember it when I asked my friends to play against my program and we were all excited to see the interesting choices that the program made and occasionally defended itself to push the game to a draw.</description>
+    </item>
+    
+    <item>
+      <title>About me</title>
+      <link>https://abhi-khare.github.io/about/</link>
+      <pubDate>Sat, 17 Sep 2022 10:38:02 +0530</pubDate>
+      
+      <guid>https://abhi-khare.github.io/about/</guid>
+      <description>Hi! I am abhinash Khare. I work as a senior MLE in the Ads relevance and ranking team at sharechat, where I am working on solving the calibration problem of core ML models. I finished my master&amp;rsquo;s in Computer Science (ML) from IISc Bengaluru (2018) and I have been working in the industry as an Applied researcher in various domains, such as NLP for Financial document analysis, Conversational AI and recently, Ads recommendations.</description>
+    </item>
+    
+  </channel>
+</rss>
